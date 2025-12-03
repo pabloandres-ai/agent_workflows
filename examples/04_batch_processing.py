@@ -15,6 +15,10 @@ Run this example:
 
 from prefect import flow
 from prefect.logging import get_run_logger
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Import the single query workflow
 from src.workflows import agent_workflow

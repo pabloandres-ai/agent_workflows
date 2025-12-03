@@ -14,9 +14,13 @@ Run this example:
 """
 
 from datetime import datetime
+from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, AIMessage
 from prefect import flow, task
 from prefect.logging import get_run_logger
+
+# Load environment variables
+load_dotenv()
 
 # Import our modular components
 from src.agents import create_agent_graph

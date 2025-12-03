@@ -29,10 +29,14 @@ BONUS CHALLENGES:
 """
 
 import os
+from dotenv import load_dotenv
 from typing import TypedDict, Annotated, Literal
 import operator
 
-from langchain_anthropic import ChatAnthropic
+# Load environment variables
+load_dotenv()
+
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import ToolNode
 from langchain_core.messages import HumanMessage, AIMessage, SystemMessage
@@ -133,7 +137,11 @@ def summarize_results(state: DataAgentState) -> DataAgentState:
     - Highlight key numbers
     - Make it easy to read
     """
-    # YOUR CODE HERE
+    # Initialize LLM
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-2.0-flash",
+        google_api_key=os.getenv("GOOGLE_API_KEY", "")
+    )# YOUR CODE HERE
     pass
 
 

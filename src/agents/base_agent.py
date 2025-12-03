@@ -6,10 +6,14 @@ The agent can reason, use tools, and make decisions based on the results.
 """
 
 import os
+from dotenv import load_dotenv
 from typing import TypedDict, Annotated, Literal
 import operator
 
-from langchain_anthropic import ChatAnthropic
+# Load environment variables
+load_dotenv()
+
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.graph import StateGraph, END
 from langgraph.prebuilt import ToolNode
 from langchain_core.messages import AIMessage
@@ -56,9 +60,9 @@ def agent_node(state: AgentState) -> AgentState:
         Updated state with the agent's response
     """
     # Initialize the LLM with tools
-    llm = ChatAnthropic(
-        model="claude-sonnet-4-20250514",
-        api_key=os.getenv("ANTHROPIC_API_KEY", "")
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-2.0-flash",
+        google_api_key=os.getenv("GOOGLE_API_KEY", "")
     )
     
     tools = [web_search, calculate, analyze_sentiment]

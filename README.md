@@ -34,7 +34,7 @@ agent_workflows/
 ### Prerequisites
 
 - Python 3.9 or higher
-- Anthropic API key ([get one here](https://console.anthropic.com/))
+- Google API key ([get one here](https://aistudio.google.com/))
 
 ### Installation
 
@@ -52,10 +52,15 @@ agent_workflows/
 3. **Set up environment variables**
    ```bash
    cp .env.example .env
-   # Edit .env and add your ANTHROPIC_API_KEY
+   # Edit .env and add your GOOGLE_API_KEY
    ```
 
-4. **Install the package (optional, for easier imports)**
+4. **Verify Setup**
+   ```bash
+   python verify_setup.py
+   ```
+
+5. **Install the package (optional, for easier imports)**
    ```bash
    pip install -e .
    ```
@@ -254,7 +259,7 @@ def create_custom_agent():
 
 - **LangGraph Documentation**: https://langchain-ai.github.io/langgraph/
 - **Prefect Documentation**: https://docs.prefect.io/
-- **Anthropic Claude**: https://docs.anthropic.com/
+- **Google AI Studio**: https://aistudio.google.com/
 
 ## 🤝 Workshop Tips
 

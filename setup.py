@@ -9,7 +9,7 @@ setup(
     install_requires=[
         "langchain>=0.1.0",
         "langgraph>=0.0.40",
-        "langchain-anthropic>=0.1.0",
+        "langchain-google-genai>=0.0.1",
         "langchain-core>=0.1.0",
         "prefect>=2.14.0",
         "httpx>=0.25.0",

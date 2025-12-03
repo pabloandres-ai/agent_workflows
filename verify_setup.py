@@ -78,7 +78,7 @@ def main():
     modules = [
         "langchain",
         "langgraph",
-        "langchain_anthropic",
+        "langchain_google_genai",
         "prefect"
     ]
     

@@ -43,12 +43,12 @@ pip install -r requirements.txt
 
 **Problem**: 
 ```
-Error: ANTHROPIC_API_KEY not set
+Error: GOOGLE_API_KEY not set
 ```
 
 **Solution**: Set the environment variable
 ```bash
-export ANTHROPIC_API_KEY="your-key-here"
+export GOOGLE_API_KEY="your-key-here"
 ```
 
 Or create a `.env` file:
@@ -64,9 +64,9 @@ cp .env.example .env
 **Problem**: Authentication error
 
 **Solutions**:
-1. Check your key at https://console.anthropic.com/
+1. Check your key at https://aistudio.google.com/
 2. Make sure there are no extra spaces
-3. Verify the key is active and has credits
+3. Verify the key is active
 
 ---
 
@@ -342,12 +342,12 @@ Create a minimal reproduction:
 ```python
 # minimal_example.py
 import os
-from langchain_anthropic import ChatAnthropic
+from langchain_google_genai import ChatGoogleGenerativeAI
 
 # Test basic LLM call
-llm = ChatAnthropic(
-    model="claude-sonnet-4-20250514",
-    api_key=os.getenv("ANTHROPIC_API_KEY")
+llm = ChatGoogleGenerativeAI(
+    model="gemini-2.0-flash",
+    google_api_key=os.getenv("GOOGLE_API_KEY")
 )
 
 response = llm.invoke("Hello!")

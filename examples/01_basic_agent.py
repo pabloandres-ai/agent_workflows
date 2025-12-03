@@ -14,10 +14,14 @@ Run this example:
 """
 
 import os
+from dotenv import load_dotenv
 from typing import TypedDict, Annotated
 import operator
 
-from langchain_anthropic import ChatAnthropic
+# Load environment variables
+load_dotenv()
+
+from langchain_google_genai import ChatGoogleGenerativeAI
 from langgraph.graph import StateGraph, END
 from langchain_core.messages import HumanMessage, AIMessage
 
@@ -49,9 +53,9 @@ def simple_agent(state: AgentState) -> AgentState:
     3. Returns the LLM's response
     """
     # Initialize the LLM
-    llm = ChatAnthropic(
-        model="claude-sonnet-4-20250514",
-        api_key=os.getenv("ANTHROPIC_API_KEY", "")
+    llm = ChatGoogleGenerativeAI(
+        model="gemini-2.0-flash",
+        google_api_key=os.getenv("GOOGLE_API_KEY", "")
     )
     
     # Get the LLM's response
