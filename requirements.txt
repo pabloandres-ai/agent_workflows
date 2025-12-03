@@ -1,0 +1,16 @@
+# Core Dependencies
+langchain>=0.1.0
+langgraph>=0.0.40
+langchain-anthropic>=0.1.0
+langchain-core>=0.1.0
+
+# Orchestration
+prefect>=2.14.0
+
+# Utilities
+httpx>=0.25.0
+python-dotenv>=1.0.0
+
+# Optional: For enhanced features
+# tavily-python>=0.3.0  # Real web search
+# openai>=1.0.0  # Alternative LLM provider
